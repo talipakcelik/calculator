@@ -46,11 +46,16 @@ const butonMultiply = document.querySelector('.btn-m');
 const butonDot = document.querySelector('.btn-dot');
 const butonEqual = document.querySelector('.btn-e');
 
+let initialValue = 0;
 buton1.addEventListener('click', function () {
-  blankScreen.textContent = '1';
+  for (let i = 0; i < 1; i++) {
+    blankScreen.textContent += '1';
+  }
 });
 buton2.addEventListener('click', function () {
-  blankScreen.textContent = '2';
+  for (let i = 0; i < 1; i++) {
+    blankScreen.textContent += '2';
+  }
 });
 buton3.addEventListener('click', function () {
   blankScreen.textContent = '3';
@@ -97,3 +102,5 @@ butonAdd.addEventListener('click', function () {
 butonDivide.addEventListener('click', function () {
   blankScreen.textContent = '/';
 });
+
+const screenPopulate = function () {};
