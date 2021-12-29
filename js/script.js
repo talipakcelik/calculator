@@ -17,18 +17,19 @@ const divide = function (num1, num2) {
 };
 
 const operate = function (operator, num1, num2) {
-  if (operator === add) {
+  if (operator === 'add') {
     return add(num1, num2);
-  } else if (operator === subtract) {
+  } else if (operator === 'subtract') {
     return subtract(num1, num2);
-  } else if (operator === multiply) {
+  } else if (operator === 'multiply') {
     return multiply(num1, num2);
-  } else if (operator === divide) {
+  } else if (operator === 'divide') {
     return divide(num1, num2);
   }
 };
 
-const blankScreen = document.querySelector('.screen');
+const blankScreen = document.querySelector('.screen2');
+const blankScreen2 = document.querySelector('.screen1');
 const buton1 = document.querySelector('.btn-1');
 const buton2 = document.querySelector('.btn-2');
 const buton3 = document.querySelector('.btn-3');
@@ -46,11 +47,12 @@ const butonMultiply = document.querySelector('.btn-m');
 const butonDot = document.querySelector('.btn-dot');
 const butonEqual = document.querySelector('.btn-e');
 
-let initialValue = 0;
+let primaryValue = 0;
+let secondaryValue = '';
+let operator = '';
+const del = /[\W_]/g;
 buton1.addEventListener('click', function () {
-  for (let i = 0; i < 1; i++) {
-    blankScreen.textContent += '1';
-  }
+  blankScreen.textContent = `${blankScreen.textContent}1`;
 });
 buton2.addEventListener('click', function () {
   for (let i = 0; i < 1; i++) {
@@ -58,49 +60,72 @@ buton2.addEventListener('click', function () {
   }
 });
 buton3.addEventListener('click', function () {
-  blankScreen.textContent = '3';
+  blankScreen.textContent = `${blankScreen.textContent}3`;
 });
 buton4.addEventListener('click', function () {
-  blankScreen.textContent = '4';
+  blankScreen.textContent = `${blankScreen.textContent}4`;
 });
 buton5.addEventListener('click', function () {
-  blankScreen.textContent = '5';
+  blankScreen.textContent = `${blankScreen.textContent}5`;
 });
 buton6.addEventListener('click', function () {
-  blankScreen.textContent = '6';
+  blankScreen.textContent = `${blankScreen.textContent}6`;
 });
 buton7.addEventListener('click', function () {
-  blankScreen.textContent = '7';
+  blankScreen.textContent = `${blankScreen.textContent}7`;
 });
 buton8.addEventListener('click', function () {
-  blankScreen.textContent = '8';
+  blankScreen.textContent = `${blankScreen.textContent}8`;
 });
 buton9.addEventListener('click', function () {
-  blankScreen.textContent = '9';
-});
-buton9.addEventListener('click', function () {
-  blankScreen.textContent = '9';
+  blankScreen.textContent = `${blankScreen.textContent}9`;
 });
 buton0.addEventListener('click', function () {
-  blankScreen.textContent = '0';
+  blankScreen.textContent = `${blankScreen.textContent}0`;
 });
 butonDot.addEventListener('click', function () {
   blankScreen.textContent = '.';
 });
-butonEqual.addEventListener('click', function () {
-  blankScreen.textContent = '=';
-});
-butonMultiply.addEventListener('click', function () {
-  blankScreen.textContent = '*';
-});
-butonSubtract.addEventListener('click', function () {
-  blankScreen.textContent = '-';
-});
+////
 butonAdd.addEventListener('click', function () {
-  blankScreen.textContent = '+';
+  primaryValue = Number(blankScreen.textContent.replace(del, ''));
+  operator = 'add';
+  blankScreen2.textContent = `${primaryValue} + `;
+  blankScreen.textContent = `${secondaryValue}`;
 });
+////
+butonMultiply.addEventListener('click', function () {
+  primaryValue = Number(blankScreen.textContent.replace(del, ''));
+  operator = 'multiply';
+  blankScreen2.textContent = `${primaryValue} * `;
+  blankScreen.textContent = `${secondaryValue}`;
+});
+////
+butonSubtract.addEventListener('click', function () {
+  primaryValue = Number(blankScreen.textContent.replace(del, ''));
+  operator = 'subtract';
+  blankScreen2.textContent = `${primaryValue} - `;
+  blankScreen.textContent = `${secondaryValue}`;
+});
+////
 butonDivide.addEventListener('click', function () {
-  blankScreen.textContent = '/';
+  primaryValue = Number(blankScreen.textContent.replace(del, ''));
+  operator = 'divide';
+  blankScreen2.textContent = `${primaryValue} + `;
+  blankScreen.textContent = `${secondaryValue}`;
+});
+////
+butonEqual.addEventListener('click', function () {
+  blankScreen2.textContent = `${
+    blankScreen2.textContent + blankScreen.textContent
+  } =`;
+  secondaryValue = Number(blankScreen.textContent.replace(del, ''));
+  console.log(operate(operator, primaryValue, secondaryValue));
+  blankScreen.textContent = `${operate(
+    operator,
+    primaryValue,
+    secondaryValue
+  )}`;
 });
 
 const screenPopulate = function () {};
