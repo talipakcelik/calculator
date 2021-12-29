@@ -92,9 +92,8 @@ butonAdd.addEventListener('click', function () {
   if (blankScreenUp.textContent.includes('+')) {
     secondaryValue = Number(blankScreen.textContent.replace(del, ''));
     for (let i = 0; i < 1; i++) {
-      blankScreenUp.textContent += `${
-        Number(primaryValue) + Number(secondaryValue)
-      }`;
+      blankScreenUp.textContent = `${add(primaryValue, secondaryValue)} + `;
+      blankScreen.textContent = `${add(primaryValue, secondaryValue)}`;
     }
   } else {
     primaryValue = Number(blankScreen.textContent.replace(del, ''));
