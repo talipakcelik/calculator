@@ -17,13 +17,13 @@ const divide = function (num1, num2) {
 };
 
 const operate = function (operator, num1, num2) {
-  if (operator === 'add') {
+  if (operator === '+') {
     return add(num1, num2);
-  } else if (operator === 'subtract') {
+  } else if (operator === '-') {
     return subtract(num1, num2);
-  } else if (operator === 'multiply') {
+  } else if (operator === 'x') {
     return multiply(num1, num2);
-  } else if (operator === 'divide') {
+  } else if (operator === '/') {
     return divide(num1, num2);
   }
 };
@@ -32,12 +32,16 @@ const blankScreenUp = document.querySelector('.screen2');
 const blankScreen = document.querySelector('.screen1');
 const numberButton = document.querySelectorAll('.number');
 const operatorButton = document.querySelectorAll('.operator');
+const equalButton = document.querySelector('.equal');
+const deleteButton = document.querySelector('.delete');
+const clearButton = document.querySelector('.clear');
 
 let primaryValue = '';
 let secondaryValue = '';
-let result = '';
+// let result = '';
 let operator = '';
 const del = /[\W_]/g;
+blankScreen.textContent = 0;
 
 numberButton.forEach(number => {
   number.addEventListener('click', function () {
@@ -50,19 +54,58 @@ numberButton.forEach(number => {
 
 operatorButton.forEach(el => {
   el.addEventListener('click', function () {
+    if (primaryValue && secondaryValue) {
+      calculate2();
+    }
     secondaryValue = primaryValue;
-    if (el.value === '/') {
-      operator = 'divide';
-      blankScreen.textContent = 
-    } else if (el.value === 'x') operator = 'multiply';
-    else if (el.value === '-') operator = 'subtrack';
-    else if (el.value === '+') operator = 'add';
+    // if (el.value === '/') {
+    //   operator = 'divide';
+    // } else if (el.value === 'x') operator = 'multiply';
+    // else if (el.value === '-') operator = 'subtrack';
+    // else if (el.value === '+') operator = 'add';
+    operator = el.textContent;
+    blankScreenUp.textContent = `${primaryValue} ${operator}`;
+    // operate(operator, parseFloat(primaryValue), parseFloat(secondaryValue));
+    // console.log(primaryValue, secondaryValue);
+    // console.log(
+    //   operate(operator, parseFloat(primaryValue), parseFloat(secondaryValue))
+    // );
+    // calculate();
+
+    primaryValue = '';
   });
-  console.log(el.value);
 });
+
+deleteButton.addEventListener('click', function () {
+  blankScreen.textContent = `${blankScreen.textContent.slice(0, -1)}`;
+  // blankScreen.textContent = blankScreen.textContent.substring(
+  //   0,
+  //   blankScreen.textContent.length - 1
+  // );
+});
+
+const calculate2 = function () {
+  const result = operate(
+    operator,
+    parseInt(secondaryValue),
+    parseInt(primaryValue)
+  );
+  blankScreen.textContent = result;
+  blankScreenUp.textContent =
+    secondaryValue + '' + operator + '' + primaryValue;
+  primaryValue = result;
+  // blankScreen.textContent = `${blankScreen.textContent + result}`;
+};
+equalButton.addEventListener('click', calculate2);
 
 ///
 ///
+// const calculate = function () {
+//   const result = operate(
+//     operator,
+//     parseFloat(primaryValue),
+//     parseFloat(secondaryValue)
+//   );
 ///
 // buton1.addEventListener('click', function () {
 //   blankScreen.textContent = `${blankScreen.textContent}1`;
