@@ -49,6 +49,7 @@ const butonEqual = document.querySelector('.btn-e');
 
 let primaryValue = '';
 let secondaryValue = '';
+let tertiaryValue = '';
 let operator = '';
 const del = /[\W_]/g;
 buton1.addEventListener('click', function () {
@@ -95,6 +96,12 @@ butonAdd.addEventListener('click', function () {
       blankScreenUp.textContent = `${add(primaryValue, secondaryValue)} + `;
       blankScreen.textContent = `${add(primaryValue, secondaryValue)}`;
     }
+    // if (
+    //   Number(blankScreen.textContent.replace(del, '')) ===
+    //   Number(blankScreenUp.textContent.replace(del, ''))
+    // ) {
+    //   blankScreen.textContent = 0;
+    // }
   } else {
     primaryValue = Number(blankScreen.textContent.replace(del, ''));
     blankScreenUp.textContent = `${primaryValue} + `;
