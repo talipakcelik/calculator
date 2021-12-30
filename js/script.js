@@ -35,6 +35,7 @@ const operatorButton = document.querySelectorAll('.operator');
 const equalButton = document.querySelector('.equal');
 const deleteButton = document.querySelector('.delete');
 const clearButton = document.querySelector('.clear');
+const dotButton = document.querySelector('.dot');
 
 let primaryValue = '';
 let secondaryValue = '';
@@ -45,17 +46,30 @@ blankScreen.textContent = 0;
 
 numberButton.forEach(number => {
   number.addEventListener('click', function () {
+    // if (number.value === '.')
     primaryValue += number.value;
     console.log(number.value);
     blankScreen.textContent = primaryValue;
     // blankScreen.textContent = `${blankScreen.textContent}${number.value}`;
   });
 });
+dotButton.addEventListener('click', function () {
+  console.log(dotButton.value);
+  if (!primaryValue.includes('.') && !blankScreen.textContent.includes('.')) {
+    primaryValue += dotButton.value;
+    blankScreen.textContent = primaryValue;
+  }
+});
+
+// decimal.addEventListener('click', function(e) {
+
+//   var decimalClicked  = e.target.textContent;
+// }
 
 operatorButton.forEach(el => {
   el.addEventListener('click', function () {
     if (primaryValue && secondaryValue) {
-      calculate2();
+      calculate();
     }
     secondaryValue = primaryValue;
     // if (el.value === '/') {
@@ -91,11 +105,11 @@ clearButton.addEventListener('click', function () {
   blankScreenUp.textContent = '';
 });
 
-const calculate2 = function () {
+const calculate = function () {
   const result = operate(
     operator,
-    parseInt(secondaryValue),
-    parseInt(primaryValue)
+    Number(secondaryValue),
+    Number(primaryValue)
   );
   blankScreen.textContent = result;
   blankScreenUp.textContent = `${secondaryValue} ${operator} ${primaryValue}`;
@@ -103,7 +117,7 @@ const calculate2 = function () {
   primaryValue = result;
   // blankScreen.textContent = `${blankScreen.textContent + result}`;
 };
-equalButton.addEventListener('click', calculate2);
+equalButton.addEventListener('click', calculate);
 
 ///
 ///
@@ -121,7 +135,7 @@ equalButton.addEventListener('click', calculate2);
 //   for (let i = 0; i < 1; i++) {
 //     blankScreen.textContent += '2';
 //   }
-// });
+// });calculate
 // buton3.addEventListener('click', function () {
 //   blankScreen.textContent = `${blankScreen.textContent}3`;
 // });
