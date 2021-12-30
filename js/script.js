@@ -77,11 +77,11 @@ operatorButton.forEach(el => {
 });
 
 deleteButton.addEventListener('click', function () {
-  blankScreen.textContent = `${blankScreen.textContent.slice(0, -1)}`;
-  // blankScreen.textContent = blankScreen.textContent.substring(
-  //   0,
-  //   blankScreen.textContent.length - 1
-  // );
+  if (primaryValue) {
+    primaryValue = primaryValue.toString();
+    primaryValue = primaryValue.slice(0, -1);
+    blankScreen.textContent = primaryValue;
+  }
 });
 
 const calculate2 = function () {
