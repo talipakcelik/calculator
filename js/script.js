@@ -84,6 +84,13 @@ deleteButton.addEventListener('click', function () {
   }
 });
 
+clearButton.addEventListener('click', function () {
+  primaryValue = '';
+  secondaryValue = '';
+  blankScreen.textContent = '0';
+  blankScreenUp.textContent = '';
+});
+
 const calculate2 = function () {
   const result = operate(
     operator,
@@ -91,8 +98,8 @@ const calculate2 = function () {
     parseInt(primaryValue)
   );
   blankScreen.textContent = result;
-  blankScreenUp.textContent =
-    secondaryValue + '' + operator + '' + primaryValue;
+  blankScreenUp.textContent = `${secondaryValue} ${operator} ${primaryValue}`;
+  // secondaryValue + '' + operator + '' + primaryValue;
   primaryValue = result;
   // blankScreen.textContent = `${blankScreen.textContent + result}`;
 };
