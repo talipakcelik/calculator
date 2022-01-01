@@ -1,5 +1,12 @@
 body {
-  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%),
+    linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(0, 0, 0, 0.25) 200%
+    );
+  background-blend-mode: multiply;
+  /* background-image: linear-gradient(60deg, #29323c 0%, #485563 100%); */
 }
 
 button {
@@ -18,33 +25,32 @@ button:focus {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  border: solid 1.5rem;
+  /* border: solid 5px #29323c; */
   background-color: black;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
 }
 
 .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  grid-gap: 0.5rem;
+  grid-gap: 1.2rem;
 }
 
 .container-2 {
   display: flex;
-  /* border: solid; */
-  justify-content: space-between;
-  /* background-color: #505050; */
+  justify-content: space-around;
 }
 
 .container-3 {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  /* border: solid; */
   height: 7rem;
   justify-content: end;
   color: #fff;
-  /* transition: all; */
 }
 .operator,
 .equal {
@@ -58,21 +64,44 @@ button:focus {
 .dot,
 .number {
   background-color: #505050;
-  /* border: none; */
   border-radius: 50%;
   color: #fff;
-  font-weight: 400;
 }
 
 .clear,
 .delete {
   color: #505050;
   background-color: #d4d4d2;
-  border-radius: 2%;
-  font-size: 2rem;
+  font-size: 1.8rem;
   padding: 1rem;
-  /* border: none; */
-  /* border-left: solid #190f00;
-  border-right: solid #190f00; */
   border-radius: 12px;
+}
+
+.screen1 {
+  font-size: 4.2rem;
+}
+
+.screen2 {
+  font-size: 3.2rem;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 2.4rem;
+  align-items: center;
+  color: #505050;
+}
+
+footer:hover,
+footer:active {
+  filter: brightness(180%);
+  transition: all 0.7s;
+}
+
+.github-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #d4d4d2;
 }

@@ -21,9 +21,9 @@ const operate = function (operator, num1, num2) {
     return add(num1, num2);
   } else if (operator === '-') {
     return subtract(num1, num2);
-  } else if (operator === 'x') {
+  } else if (operator === '×') {
     return multiply(num1, num2);
-  } else if (operator === '/') {
+  } else if (operator === '÷') {
     return divide(num1, num2);
   }
 };
@@ -40,7 +40,8 @@ const dotButton = document.querySelector('.dot');
 let primaryValue = '';
 let secondaryValue = '';
 let operator = '';
-blankScreen.textContent = 0;
+// blankScreen.textContent = 0;
+// blankScreenUp.textContent = ;
 
 numberButton.forEach(number => {
   number.addEventListener('click', function () {
