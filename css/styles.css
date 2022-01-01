@@ -42,7 +42,7 @@ button:focus {
 .container-2 {
   display: flex;
   justify-content: space-between;
-  gap: 3rem;
+  gap: 1rem;
 }
 
 .container-3 {
@@ -81,7 +81,7 @@ button:focus {
   font-size: 1.8rem;
   padding: 1rem;
   border-radius: 100px;
-  width: 15rem;
+  width: 18rem;
 }
 
 .screen1 {
