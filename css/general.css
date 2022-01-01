@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -19,7 +23,7 @@ footer {
 
 .main-container {
   max-width: 35rem;
-  height: 50rem;
+  height: 54rem;
   border: solid;
   margin: 5rem auto;
 }
@@ -36,4 +40,5 @@ footer {
 
   /* max-width: 30rem; */
   margin: 0rem auto 1.5rem auto;
+  padding: 1rem;
 }

@@ -48,9 +48,14 @@ button:focus {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  height: 7rem;
+  height: 10rem;
   justify-content: end;
   color: #fff;
+  background-color: #505050;
+  border-radius: 12px;
+  box-shadow: rgb(55, 55, 73) 0px 50px 100px -20px,
+    rgba(59, 56, 55, 0.856) 0px 30px 60px -30px,
+    rgba(3, 3, 3, 0.959) 0px -2px 6px 0px inset;
 }
 .operator,
 .equal {
@@ -83,6 +88,7 @@ button:focus {
 
 .screen2 {
   font-size: 3.2rem;
+  filter: brightness(80%);
 }
 
 footer {
