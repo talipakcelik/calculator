@@ -56,7 +56,7 @@ operatorButton.forEach(el => {
       calculate();
     }
     secondaryValue = primaryValue;
-    operator = el.textContent;
+    operator = el.value;
     blankScreenUp.textContent = `${primaryValue} ${operator}`;
     primaryValue = '';
   });
@@ -90,9 +90,11 @@ const calculate = function () {
     Number(secondaryValue),
     Number(primaryValue)
   );
-  blankScreen.textContent = Math.round(result * 1000) / 1000;
+  // blankScreen.textContent = Math.round(result * 1000) / 1000;
+  blankScreen.textContent = result;
   blankScreenUp.textContent = `${secondaryValue} ${operator} ${primaryValue} = `;
-  primaryValue = Math.round(result * 1000) / 1000;
+  // primaryValue = Math.round(result * 1000) / 1000;
+  primaryValue = result;
 };
 
 equalButton.addEventListener('click', calculate);
