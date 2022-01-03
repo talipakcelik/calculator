@@ -90,11 +90,9 @@ const calculate = function () {
     Number(secondaryValue),
     Number(primaryValue)
   );
-  // blankScreen.textContent = Math.round(result * 1000) / 1000;
-  blankScreen.textContent = result;
+  blankScreen.textContent = Math.round(result * 1000) / 1000;
   blankScreenUp.textContent = `${secondaryValue} ${operator} ${primaryValue} = `;
-  // primaryValue = Math.round(result * 1000) / 1000;
-  primaryValue = result;
+  primaryValue = Math.round(result * 1000) / 1000;
 };
 
 equalButton.addEventListener('click', calculate);
