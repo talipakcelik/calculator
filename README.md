@@ -1,5 +1,5 @@
 # calculator_project_top
-###### gidişat yönergesi / walkthrough
+## gidişat yönergesi / walkthrough 
 - (1) hesap makinesindeki number'lara  `forEach` ile seçildi.
 	- (1.1) sonrasında da  `.addEventListener('click', function ()` ile hepsi dinlenmeye başlandı
 	- (1.2) primaryvalue değeri htmll attribute value değerine eşitlendi. 
