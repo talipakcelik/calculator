@@ -22,3 +22,8 @@
 		- (2.4) finally, first value equal to blank. because I want to see the display clean every time I press the operator button
 - In CSS, `filter: brightness` 
 	- increased brightness by just adding this filter instead of finding *tint* version of all different colors one by one. 
+- Diffrence between `:hover` and `:focus` [^1]
+	- **hover**, when your mouse pointer is on the element.
+	- **focus**, when you select an element, the element gets into the focus.
+
+[^1]: https://stackoverflow.com/questions/6143782/differences-between-css3-hover-and-focus
