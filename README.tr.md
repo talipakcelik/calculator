@@ -7,6 +7,12 @@
 	- örneğin, hesap makinesinin ekranından herhangi bir silme işlemi yaptığımda, silme işleminin sadece DOM üzerinden yapılması.
 	- olması gereken ve en sağlıklı yol, js dosyası içerisindeki variable üzerinden delete butonunun işlemesi
 	- böylece silme işlemini ilk olarak değişken üzerinden yapmak, sonra silinmiş halini DOM'a yani `textContent`e eklemek. 
+- CSS içerisinde `filter: brightness`
+	- hesap makinesindeki bütün butonlara, daha doğrusu farklı renklere tıklandığında mevcut renklerinin daha açık renkleri gelmiş oluyor.
+	- tek tek bütün renklerin *tint* halini bulmaktansa bu yöntem daha basit. 
+- `:hover` ve `:focus` arasındaki fark
+	- **hover**, mouse imlecinin elementin üstüne gelmesi
+	- **focus**, mouse ile elemente tıklayınca fokus efektinin ekranda farklı bir yere tıklayana değin kalması
 
 ## gidişat yönergesi 
 - (1) hesap makinesindeki number'lara  `forEach` ile seçildi.
