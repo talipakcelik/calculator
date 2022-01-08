@@ -10,10 +10,11 @@
 - CSS içerisinde `filter: brightness`
 	- hesap makinesindeki bütün butonlara, daha doğrusu farklı renklere tıklandığında mevcut renklerinin daha açık renkleri gelmiş oluyor.
 	- tek tek bütün renklerin *tint* halini bulmaktansa bu yöntem daha basit. 
-- `:hover` ve `:focus` arasındaki fark
+- `:hover` ve `:focus` arasındaki fark [^1]
 	- **hover**, mouse imlecinin elementin üstüne gelmesi
 	- **focus**, mouse ile elemente tıklayınca fokus efektinin ekranda farklı bir yere tıklayana değin kalması
 
+[^1]: https://stackoverflow.com/questions/6143782/differences-between-css3-hover-and-focus
 ## gidişat yönergesi 
 - (1) hesap makinesindeki number'lara  `forEach` ile seçildi.
 	- (1.1) sonrasında da  `.addEventListener('click', function ()` ile hepsi dinlenmeye başlandı
@@ -51,3 +52,4 @@
 			![[2021-12-31_01-50-25.mp4]]
 - `calculete()` içerisinde sonucu hesaplarken `operate()` fonksiyonun argümanlarına ilk olarak secondaryValue sonra primaryValue, aslında bir nevi ters gibi. ancak düzgün işlemesi için, bu şekilde olması gerekti.
 	- ufak bir detay. 
+
