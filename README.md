@@ -1,5 +1,18 @@
 # calculator_project_top
-## gidişat yönergesi / walkthrough 
+
+## calculator's lower display clear and upper display update instruction
+- (1) when I press the number button,
+	- (1.1) first value equal to number value e.g. 4, 5, 6...
+	- (1.2) and so, lower display text equal to first value
+
+- (2) when I press the operator button, 
+	- (2.1) set the second value equal to the first value (second value can also be thought of as stored value)
+		- (2.1.1) because of that (and 2.3), upper and lower display showing same thing at the same time
+	- (2.2) operator variable equal to operator's value (+, -,  /, x)
+	- (2.3) then, upper display text equal to first value and operator (e.g. 4 +)
+	- (2.4) finally, first value equal to blank. because I want to see the display clean every time I press the operator button
+	
+## gidişat yönergesi / walkthrough in turkish
 - (1) hesap makinesindeki number'lara  `forEach` ile seçildi.
 	- (1.1) sonrasında da  `.addEventListener('click', function ()` ile hepsi dinlenmeye başlandı
 	- (1.2) primaryvalue değeri htmll attribute value değerine eşitlendi. 
@@ -33,6 +46,5 @@
 		- sanırım zaten istenilen de bu. 
 	- peki bunun yerine `primaryValue = '';` eklenirse ne olur?
 		- bS'yi baştan yazmaya başlıyor.
-			![[2021-12-31_01-50-25.mp4]]
 - `calculete()` içerisinde sonucu hesaplarken `operate()` fonksiyonun argümanlarına ilk olarak secondaryValue sonra primaryValue, aslında bir nevi ters gibi. ancak düzgün işlemesi için, bu şekilde olması gerekti.
 	- ufak bir detay. 
