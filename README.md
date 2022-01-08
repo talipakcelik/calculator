@@ -20,3 +20,5 @@
 		- (2.2) operator variable equal to operator's value (+, -,  /, x)
 		- (2.3) then, upper display text equal to first value and operator (e.g. 4 +)
 		- (2.4) finally, first value equal to blank. because I want to see the display clean every time I press the operator button
+- In CSS, `filter: brightness` 
+	- increased brightness by just adding this filter instead of finding *tint* version of all different colors one by one. 
