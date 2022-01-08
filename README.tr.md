@@ -1,3 +1,13 @@
+# Giriş
+- Bu proje [TheOdinProject'in yönergeleriyle](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/calculator) tamamlanmıştır.
+- [Önizleme](https://talipakcelik.github.io/calculator/)
+
+## Bu projede fark ettiğim kilit noktalar
+- DOM ve js state arasındaki fark: 
+	- örneğin, hesap makinesinin ekranından herhangi bir silme işlemi yaptığımda, silme işleminin sadece DOM üzerinden yapılması.
+	- olması gereken ve en sağlıklı yol, js dosyası içerisindeki variable üzerinden delete butonunun işlemesi
+	- böylece silme işlemini ilk olarak değişken üzerinden yapmak, sonra silinmiş halini DOM'a yani `textContent`e eklemek. 
+
 ## gidişat yönergesi 
 - (1) hesap makinesindeki number'lara  `forEach` ile seçildi.
 	- (1.1) sonrasında da  `.addEventListener('click', function ()` ile hepsi dinlenmeye başlandı
